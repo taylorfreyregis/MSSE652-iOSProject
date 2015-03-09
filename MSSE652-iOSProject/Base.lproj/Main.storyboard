@@ -148,7 +148,7 @@
         <!--Social Media-->
         <scene sceneID="4ES-hn-y39">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="VUe-8b-5mQ" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Social Media" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="VUe-8b-5mQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Social Media" id="Nce-hL-KGY"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3s-ON-T7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
