@@ -7,6 +7,7 @@
 //
 
 #import "SCISProgramTableViewController.h"
+#import "Constants.h"
 
 @interface SCISProgramTableViewController ()
 
@@ -14,8 +15,13 @@
 
 @implementation SCISProgramTableViewController
 
+NSMutableArray *programs;
+NSXMLParser *xmlParser;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self getScisPrograms];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,13 +38,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
@@ -97,4 +101,71 @@
 }
 */
 
+#pragma mark - Web Service
+
+-(void) getScisPrograms {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSError *error = nil;
+        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program"]];
+        
+        /*
+        // Needs a few delegates implemented, but appears to be a way to specific Accept type in JSON 
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
+        [request setHTTPMethod:@"GET"];
+        [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+        
+        [connection start];
+        
+        if(connection){
+            data = [[NSMutableData alloc] init];
+        }
+        */
+       
+        // Works, but cannot use for parsing JSON. Returns XML and there appears to be no way to set the HTTPHeaders.
+//        NSString *response = [NSString stringWithContentsOfURL:url
+//                                                      encoding:NSASCIIStringEncoding
+//                                                         error:&error];
+        
+//        if (!error) {
+//            NSLog(@"Response: %@", response);
+//        } else {
+//            NSLog(@"Error: %@", error);
+//        }
+        
+        xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+        [xmlParser setDelegate:self];
+        
+    });
+}
+
+
+#pragma mark - NSXMLParserDelegate
+
+-(void) parserDidStartDocument:(NSXMLParser *)parser {
+    programs = [[NSMutableArray alloc] init];
+}
+
+-(void) parserDidEndDocument:(NSXMLParser *)parser {
+    [self.tableView reloadData];
+}
+
+-(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    if ([elementName isEqualToString:<#(NSString *)#>])
+}
+
+-(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
+}
+
+-(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    
+}
+
+-(void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSLog(@"XML Parsing Error: %@", parseError);
+}
 @end

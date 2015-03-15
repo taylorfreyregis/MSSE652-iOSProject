@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555851AB6011600B0F14E /* SCISProgramTableViewController.m */; };
+		7415558A1AB601AC00B0F14E /* JsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555891AB601AC00B0F14E /* JsonUtils.m */; };
+		7415558D1AB601BC00B0F14E /* WebServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7415558C1AB601BC00B0F14E /* WebServices.m */; };
+		741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555911AB60D4A00B0F14E /* ScisProgram.m */; };
 		742AB0C91AACFABB00C01ED9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AB0C81AACFABB00C01ED9 /* main.m */; };
 		742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AB0CB1AACFABB00C01ED9 /* AppDelegate.m */; };
 		742AB0D21AACFABB00C01ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742AB0D01AACFABB00C01ED9 /* Main.storyboard */; };
@@ -29,6 +32,13 @@
 /* Begin PBXFileReference section */
 		741555841AB6011600B0F14E /* SCISProgramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISProgramTableViewController.h; sourceTree = "<group>"; };
 		741555851AB6011600B0F14E /* SCISProgramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgramTableViewController.m; sourceTree = "<group>"; };
+		741555881AB601AC00B0F14E /* JsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtils.h; sourceTree = "<group>"; };
+		741555891AB601AC00B0F14E /* JsonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtils.m; sourceTree = "<group>"; };
+		7415558B1AB601BC00B0F14E /* WebServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServices.h; sourceTree = "<group>"; };
+		7415558C1AB601BC00B0F14E /* WebServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServices.m; sourceTree = "<group>"; };
+		7415558E1AB6043300B0F14E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		741555901AB60D4A00B0F14E /* ScisProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScisProgram.h; sourceTree = "<group>"; };
+		741555911AB60D4A00B0F14E /* ScisProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScisProgram.m; sourceTree = "<group>"; };
 		742AB0C31AACFABB00C01ED9 /* MSSE652-iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSSE652-iOSProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742AB0C71AACFABB00C01ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		742AB0C81AACFABB00C01ED9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,8 +73,21 @@
 		741555871AB6011F00B0F14E /* Web Services */ = {
 			isa = PBXGroup;
 			children = (
+				741555881AB601AC00B0F14E /* JsonUtils.h */,
+				741555891AB601AC00B0F14E /* JsonUtils.m */,
+				7415558B1AB601BC00B0F14E /* WebServices.h */,
+				7415558C1AB601BC00B0F14E /* WebServices.m */,
 			);
 			name = "Web Services";
+			sourceTree = "<group>";
+		};
+		7415558F1AB60D3C00B0F14E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				741555901AB60D4A00B0F14E /* ScisProgram.h */,
+				741555911AB60D4A00B0F14E /* ScisProgram.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		742AB0BA1AACFABB00C01ED9 = {
@@ -88,6 +111,8 @@
 		742AB0C51AACFABB00C01ED9 /* MSSE652-iOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				7415558E1AB6043300B0F14E /* Constants.h */,
+				7415558F1AB60D3C00B0F14E /* Models */,
 				741555871AB6011F00B0F14E /* Web Services */,
 				FAFCF62D1AAD58ED00610148 /* ViewControllers */,
 				742AB0CA1AACFABB00C01ED9 /* AppDelegate.h */,
@@ -236,7 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */,
+				7415558D1AB601BC00B0F14E /* WebServices.m in Sources */,
+				7415558A1AB601AC00B0F14E /* JsonUtils.m in Sources */,
 				741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */,
+				741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */,
 				742AB0C91AACFABB00C01ED9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

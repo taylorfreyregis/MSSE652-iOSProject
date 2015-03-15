@@ -7,7 +7,7 @@
         <!--SCIS Programs-->
         <scene sceneID="Mpt-lP-wZ8">
             <objects>
-                <tableViewController id="yEY-1h-AFI" sceneMemberID="viewController">
+                <tableViewController id="yEY-1h-AFI" customClass="SCISProgramTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GmU-Sc-vew">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
