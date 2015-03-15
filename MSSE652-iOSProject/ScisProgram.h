@@ -11,7 +11,7 @@
 @interface ScisProgram : NSObject
 
 @property (nonatomic) int ident;
-@property (nonatomic, weak) NSString *name;
+@property (nonatomic) NSString *name;
 
 -(instancetype) initWithId:(int) ident andName:(NSString *) name;
 

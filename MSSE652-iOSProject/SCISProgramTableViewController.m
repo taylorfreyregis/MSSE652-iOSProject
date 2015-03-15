@@ -8,6 +8,7 @@
 
 #import "SCISProgramTableViewController.h"
 #import "Constants.h"
+#import "ScisProgram.h"
 
 @interface SCISProgramTableViewController ()
 
@@ -16,10 +17,21 @@
 @implementation SCISProgramTableViewController
 
 NSMutableArray *programs;
+
 NSXMLParser *xmlParser;
+
+NSString *currentElement;
+int currentIdent;
+NSString *currentName;
+
+ScisProgram *currentProgram;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (programs == nil) {
+        programs = [[NSMutableArray alloc] init];
+    }
     
     [self getScisPrograms];
     
@@ -39,23 +51,27 @@ NSXMLParser *xmlParser;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return programs.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScisProgramCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] init];
+    }
+    
+    cell.textLabel.text = ((ScisProgram *)[programs objectAtIndex:indexPath.row]).name;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -139,6 +155,7 @@ NSXMLParser *xmlParser;
         xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
         [xmlParser setDelegate:self];
         
+        [xmlParser parse];
     });
 }
 
@@ -146,23 +163,44 @@ NSXMLParser *xmlParser;
 #pragma mark - NSXMLParserDelegate
 
 -(void) parserDidStartDocument:(NSXMLParser *)parser {
-    programs = [[NSMutableArray alloc] init];
+    [programs removeAllObjects];
 }
 
 -(void) parserDidEndDocument:(NSXMLParser *)parser {
+    NSLog(@"something %@", programs);
     [self.tableView reloadData];
 }
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-    if ([elementName isEqualToString:<#(NSString *)#>])
+    if ([elementName isEqualToString:PROGRAM]) {
+        currentProgram = [[ScisProgram alloc] init];
+    }
+    
+    currentElement = [[NSString alloc] initWithString:elementName];
 }
 
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
+    if ([elementName isEqualToString:PROGRAM]) {
+        
+        [programs addObject:currentProgram];
+    }
+    else if ([elementName isEqualToString:IDENT]){
+        
+        currentProgram.ident = currentIdent;
+    }
+    else if ([elementName isEqualToString:NAME]){
+        
+        currentProgram.name = [[NSString alloc] initWithString:currentName];
+    }
 }
 
 -(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
+    // Store the found characters if only we're interested in the current element.
+    if ([currentElement isEqualToString:IDENT]) {
+        currentIdent = [string intValue];
+    } else if ([currentElement isEqualToString:NAME]) {
+        currentName = string;
+    }
 }
 
 -(void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
