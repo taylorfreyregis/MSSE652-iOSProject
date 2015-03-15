@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555851AB6011600B0F14E /* SCISProgramTableViewController.m */; };
 		742AB0C91AACFABB00C01ED9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AB0C81AACFABB00C01ED9 /* main.m */; };
 		742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AB0CB1AACFABB00C01ED9 /* AppDelegate.m */; };
 		742AB0D21AACFABB00C01ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742AB0D01AACFABB00C01ED9 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		741555841AB6011600B0F14E /* SCISProgramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISProgramTableViewController.h; sourceTree = "<group>"; };
+		741555851AB6011600B0F14E /* SCISProgramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgramTableViewController.m; sourceTree = "<group>"; };
 		742AB0C31AACFABB00C01ED9 /* MSSE652-iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSSE652-iOSProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742AB0C71AACFABB00C01ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		742AB0C81AACFABB00C01ED9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +60,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		741555871AB6011F00B0F14E /* Web Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Web Services";
+			sourceTree = "<group>";
+		};
 		742AB0BA1AACFABB00C01ED9 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		742AB0C51AACFABB00C01ED9 /* MSSE652-iOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				741555871AB6011F00B0F14E /* Web Services */,
 				FAFCF62D1AAD58ED00610148 /* ViewControllers */,
 				742AB0CA1AACFABB00C01ED9 /* AppDelegate.h */,
 				742AB0CB1AACFABB00C01ED9 /* AppDelegate.m */,
@@ -118,6 +129,8 @@
 		FAFCF62D1AAD58ED00610148 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				741555841AB6011600B0F14E /* SCISProgramTableViewController.h */,
+				741555851AB6011600B0F14E /* SCISProgramTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -223,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */,
+				741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */,
 				742AB0C91AACFABB00C01ED9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
