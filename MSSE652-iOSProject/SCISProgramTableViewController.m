@@ -10,10 +10,6 @@
 #import "Constants.h"
 #import "ScisProgram.h"
 
-@interface SCISProgramTableViewController ()
-
-@end
-
 @implementation SCISProgramTableViewController
 
 NSMutableArray *programs;

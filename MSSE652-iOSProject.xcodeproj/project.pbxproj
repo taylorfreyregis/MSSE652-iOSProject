@@ -11,6 +11,9 @@
 		7415558A1AB601AC00B0F14E /* JsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555891AB601AC00B0F14E /* JsonUtils.m */; };
 		7415558D1AB601BC00B0F14E /* WebServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7415558C1AB601BC00B0F14E /* WebServices.m */; };
 		741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555911AB60D4A00B0F14E /* ScisProgram.m */; };
+		741555951AB618C500B0F14E /* SCISCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555941AB618C500B0F14E /* SCISCourseTableViewController.m */; };
+		741555981AB6199000B0F14E /* ScisCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555971AB6199000B0F14E /* ScisCourse.m */; };
+		7415559B1AB61EA800B0F14E /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7415559A1AB61EA800B0F14E /* CourseDetailViewController.m */; };
 		742AB0C91AACFABB00C01ED9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AB0C81AACFABB00C01ED9 /* main.m */; };
 		742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AB0CB1AACFABB00C01ED9 /* AppDelegate.m */; };
 		742AB0D21AACFABB00C01ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742AB0D01AACFABB00C01ED9 /* Main.storyboard */; };
@@ -39,6 +42,12 @@
 		7415558E1AB6043300B0F14E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		741555901AB60D4A00B0F14E /* ScisProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScisProgram.h; sourceTree = "<group>"; };
 		741555911AB60D4A00B0F14E /* ScisProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScisProgram.m; sourceTree = "<group>"; };
+		741555931AB618C500B0F14E /* SCISCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISCourseTableViewController.h; sourceTree = "<group>"; };
+		741555941AB618C500B0F14E /* SCISCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISCourseTableViewController.m; sourceTree = "<group>"; };
+		741555961AB6199000B0F14E /* ScisCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScisCourse.h; sourceTree = "<group>"; };
+		741555971AB6199000B0F14E /* ScisCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScisCourse.m; sourceTree = "<group>"; };
+		741555991AB61EA800B0F14E /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
+		7415559A1AB61EA800B0F14E /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
 		742AB0C31AACFABB00C01ED9 /* MSSE652-iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSSE652-iOSProject.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742AB0C71AACFABB00C01ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		742AB0C81AACFABB00C01ED9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,6 +95,8 @@
 			children = (
 				741555901AB60D4A00B0F14E /* ScisProgram.h */,
 				741555911AB60D4A00B0F14E /* ScisProgram.m */,
+				741555961AB6199000B0F14E /* ScisCourse.h */,
+				741555971AB6199000B0F14E /* ScisCourse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -156,6 +167,10 @@
 			children = (
 				741555841AB6011600B0F14E /* SCISProgramTableViewController.h */,
 				741555851AB6011600B0F14E /* SCISProgramTableViewController.m */,
+				741555931AB618C500B0F14E /* SCISCourseTableViewController.h */,
+				741555941AB618C500B0F14E /* SCISCourseTableViewController.m */,
+				741555991AB61EA800B0F14E /* CourseDetailViewController.h */,
+				7415559A1AB61EA800B0F14E /* CourseDetailViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -262,9 +277,12 @@
 			files = (
 				742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */,
 				7415558D1AB601BC00B0F14E /* WebServices.m in Sources */,
+				741555981AB6199000B0F14E /* ScisCourse.m in Sources */,
 				7415558A1AB601AC00B0F14E /* JsonUtils.m in Sources */,
+				7415559B1AB61EA800B0F14E /* CourseDetailViewController.m in Sources */,
 				741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */,
 				741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */,
+				741555951AB618C500B0F14E /* SCISCourseTableViewController.m in Sources */,
 				742AB0C91AACFABB00C01ED9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

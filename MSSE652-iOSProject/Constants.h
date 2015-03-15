@@ -12,5 +12,7 @@
 #define WebServicePath @"Regis2/webresources/"
 
 #define PROGRAM @"program"
+#define COURSE @"course"
 #define IDENT @"id"
 #define NAME @"name"
+#define PROGRAM_IDENT @"pid"
