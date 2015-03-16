@@ -12,6 +12,9 @@
 
 @implementation SCISProgramTableViewController
 
+NSMutableData *responseData;
+
+
 NSMutableArray *programs;
 
 NSXMLParser *xmlParser;
@@ -116,90 +119,120 @@ ScisProgram *currentProgram;
 #pragma mark - Web Service
 
 -(void) getScisPrograms {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSError *error = nil;
-        
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program"]];
-        
-        /*
-        // Needs a few delegates implemented, but appears to be a way to specific Accept type in JSON 
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
-        [request setHTTPMethod:@"GET"];
-        [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        
-        NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-        
-        [connection start];
-        
-        if(connection){
-            data = [[NSMutableData alloc] init];
-        }
-        */
-       
-        // Works, but cannot use for parsing JSON. Returns XML and there appears to be no way to set the HTTPHeaders.
-//        NSString *response = [NSString stringWithContentsOfURL:url
-//                                                      encoding:NSASCIIStringEncoding
-//                                                         error:&error];
-        
-//        if (!error) {
-//            NSLog(@"Response: %@", response);
-//        } else {
-//            NSLog(@"Error: %@", error);
-//        }
-        
-        xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
-        [xmlParser setDelegate:self];
-        
-        [xmlParser parse];
-    });
-}
-
-
-#pragma mark - NSXMLParserDelegate
-
--(void) parserDidStartDocument:(NSXMLParser *)parser {
-    [programs removeAllObjects];
-}
-
--(void) parserDidEndDocument:(NSXMLParser *)parser {
-    NSLog(@"something %@", programs);
-    [self.tableView reloadData];
-}
-
--(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-    if ([elementName isEqualToString:PROGRAM]) {
-        currentProgram = [[ScisProgram alloc] init];
-    }
     
-    currentElement = [[NSString alloc] initWithString:elementName];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program"]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setHTTPMethod:@"GET"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
--(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([elementName isEqualToString:PROGRAM]) {
-        
-        [programs addObject:currentProgram];
-    }
-    else if ([elementName isEqualToString:IDENT]){
-        
-        currentProgram.ident = currentIdent;
-    }
-    else if ([elementName isEqualToString:NAME]){
-        
-        currentProgram.name = [[NSString alloc] initWithString:currentName];
-    }
+//XML Version
+//-(void) getScisPrograms {
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSError *error = nil;
+//        
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program"]];
+//        
+//        /*
+//        // Needs a few delegates implemented, but appears to be a way to specific Accept type in JSON 
+//        
+//        NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
+//        [request setHTTPMethod:@"GET"];
+//        [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//        
+//        NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+//        
+//        [connection start];
+//        
+//        if(connection){
+//            data = [[NSMutableData alloc] init];
+//        }
+//        */
+//       
+//        // Works, but cannot use for parsing JSON. Returns XML and there appears to be no way to set the HTTPHeaders.
+////        NSString *response = [NSString stringWithContentsOfURL:url
+////                                                      encoding:NSASCIIStringEncoding
+////                                                         error:&error];
+//        
+////        if (!error) {
+////            NSLog(@"Response: %@", response);
+////        } else {
+////            NSLog(@"Error: %@", error);
+////        }
+//        
+//        xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+//        [xmlParser setDelegate:self];
+//        
+//        [xmlParser parse];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            [self.tableView reloadData];
+//        });
+//    });
+//}
+
+#pragma mark - NSURLConnectionDelegate / NSURLConnectionDataDelegate
+-(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    responseData = [[NSMutableData alloc] init];
 }
 
--(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    // Store the found characters if only we're interested in the current element.
-    if ([currentElement isEqualToString:IDENT]) {
-        currentIdent = [string intValue];
-    } else if ([currentElement isEqualToString:NAME]) {
-        currentName = string;
-    }
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [responseData appendData:data];
 }
 
--(void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    NSLog(@"XML Parsing Error: %@", parseError);
+-(void) connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSString *response = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+    NSLog(@"Response string: %@", response);
 }
+
+- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"NSURLConnection Error: %@", error);
+}
+
+//#pragma mark - NSXMLParserDelegate
+//
+//-(void) parserDidStartDocument:(NSXMLParser *)parser {
+//    [programs removeAllObjects];
+//}
+//
+//-(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+//    if ([elementName isEqualToString:PROGRAM]) {
+//        currentProgram = [[ScisProgram alloc] init];
+//    }
+//    
+//    currentElement = [[NSString alloc] initWithString:elementName];
+//}
+//
+//-(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+//    if ([elementName isEqualToString:PROGRAM]) {
+//        
+//        [programs addObject:currentProgram];
+//    }
+//    else if ([elementName isEqualToString:IDENT]){
+//        
+//        currentProgram.ident = currentIdent;
+//    }
+//    else if ([elementName isEqualToString:NAME]){
+//        
+//        currentProgram.name = [[NSString alloc] initWithString:currentName];
+//    }
+//}
+//
+//-(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+//    // Store the found characters if only we're interested in the current element.
+//    if ([currentElement isEqualToString:IDENT]) {
+//        currentIdent = [string intValue];
+//    } else if ([currentElement isEqualToString:NAME]) {
+//        currentName = string;
+//    }
+//}
+//
+//-(void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+//    NSLog(@"XML Parsing Error: %@", parseError);
+//}
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCISProgramTableViewController : UITableViewController <NSXMLParserDelegate>
+@interface SCISProgramTableViewController : UITableViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @end

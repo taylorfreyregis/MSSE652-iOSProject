@@ -158,6 +158,11 @@ ScisCourse *selectedCourse;
         [xmlParser setDelegate:self];
         
         [xmlParser parse];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+        });
     });
 }
 
@@ -167,11 +172,6 @@ ScisCourse *selectedCourse;
     [courses removeAllObjects];
     currentCourse = nil;
     currentProgram = nil;
-}
-
--(void) parserDidEndDocument:(NSXMLParser *)parser {
-    NSLog(@"something %@", courses);
-    [self.tableView reloadData];
 }
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
