@@ -187,12 +187,40 @@ ScisProgram *currentProgram;
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
     NSString *response = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"Response string: %@", response);
+    NSLog(@"JSON Response: %@", response); // only for logging
+    
+    [programs removeAllObjects];
+    
+    NSError *error = nil;
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:responseData
+                                                     options:kNilOptions
+                                                       error:&error];
+    
+    for (int i = 0; i <array.count; i++) {
+        NSString *item = array[i];
+        NSLog(@"item: %@", item);
+        
+        NSDictionary *programDict = array[i];
+        ScisProgram *program = [[ScisProgram alloc]init];
+        for (id key in programDict) {
+            id value = [programDict objectForKey:key];
+            NSLog(@"key: %@, value: %@", key, value);
+            if ([key isEqualToString:IDENT]) {
+                program.ident = [value intValue];
+            } else if ([key isEqualToString:NAME]) {
+                program.name = value;
+            }
+        }
+        [programs addObject:program];
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"NSURLConnection Error: %@", error);
 }
+
 
 //#pragma mark - NSXMLParserDelegate
 //
