@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6AF1059902D696E5B9C5FF81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112D15D27AE583BCA06B076D /* libPods.a */; };
 		741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555851AB6011600B0F14E /* SCISProgramTableViewController.m */; };
-		7415558A1AB601AC00B0F14E /* JsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555891AB601AC00B0F14E /* JsonUtils.m */; };
 		7415558D1AB601BC00B0F14E /* WebServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7415558C1AB601BC00B0F14E /* WebServices.m */; };
 		741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555911AB60D4A00B0F14E /* ScisProgram.m */; };
 		741555951AB618C500B0F14E /* SCISCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741555941AB618C500B0F14E /* SCISCourseTableViewController.m */; };
@@ -38,8 +37,6 @@
 		236F77DB720D3C00BCA0644F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		741555841AB6011600B0F14E /* SCISProgramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISProgramTableViewController.h; sourceTree = "<group>"; };
 		741555851AB6011600B0F14E /* SCISProgramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgramTableViewController.m; sourceTree = "<group>"; };
-		741555881AB601AC00B0F14E /* JsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtils.h; sourceTree = "<group>"; };
-		741555891AB601AC00B0F14E /* JsonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtils.m; sourceTree = "<group>"; };
 		7415558B1AB601BC00B0F14E /* WebServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServices.h; sourceTree = "<group>"; };
 		7415558C1AB601BC00B0F14E /* WebServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServices.m; sourceTree = "<group>"; };
 		7415558E1AB6043300B0F14E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -95,8 +92,6 @@
 		741555871AB6011F00B0F14E /* Web Services */ = {
 			isa = PBXGroup;
 			children = (
-				741555881AB601AC00B0F14E /* JsonUtils.h */,
-				741555891AB601AC00B0F14E /* JsonUtils.m */,
 				7415558B1AB601BC00B0F14E /* WebServices.h */,
 				7415558C1AB601BC00B0F14E /* WebServices.m */,
 			);
@@ -337,7 +332,6 @@
 				742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */,
 				7415558D1AB601BC00B0F14E /* WebServices.m in Sources */,
 				741555981AB6199000B0F14E /* ScisCourse.m in Sources */,
-				7415558A1AB601AC00B0F14E /* JsonUtils.m in Sources */,
 				7415559B1AB61EA800B0F14E /* CourseDetailViewController.m in Sources */,
 				741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */,
 				741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */,

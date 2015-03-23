@@ -10,8 +10,8 @@
 
 @interface WebServices : NSObject
 
-+(void)getProgramsWithCompletion:(void(^)(NSArray *programs))completionBlock andFailure:(void(^)(NSError *error))failureBlock;
++(void)getProgramsWithCompletion:(void(^)(NSArray *jsonArray))completionBlock andFailure:(void(^)(NSError *error))failureBlock;
 
-+(void)getCoursesWithCompletion:(void(^)(NSArray *courses))completionBlock andFailure:(void(^)(NSError *error))failureBlock;
++(void)getCoursesWithCompletion:(void(^)(NSXMLParser *responseXmlParser))completionBlock andFailure:(void(^)(NSError *error))failureBlock;
 
 @end

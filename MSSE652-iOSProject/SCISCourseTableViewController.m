@@ -10,6 +10,7 @@
 #import "ScisCourse.h"
 #import "Constants.h"
 #import "CourseDetailViewController.h"
+#import "WebServices.h"
 
 @implementation SCISCourseTableViewController
 
@@ -122,11 +123,21 @@ ScisCourse *selectedCourse;
 #pragma mark - Web Service
 
 -(void) getScisCourses {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSError *error = nil;
+    
+    [WebServices getCoursesWithCompletion:^(NSXMLParser *responseXmlParser) {
+        [responseXmlParser setDelegate:self];
+        [responseXmlParser parse];
         
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.course"]];
-        
+        [self.tableView reloadData];
+    } andFailure:^(NSError *error) {
+        NSLog(@"Xml Request error: %@", error);
+    }];
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSError *error = nil;
+//        
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.course"]];
+    
         /*
          // Needs a few delegates implemented, but appears to be a way to specific Accept type in JSON
          
@@ -154,16 +165,17 @@ ScisCourse *selectedCourse;
         //            NSLog(@"Error: %@", error);
         //        }
         
-        xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
-        [xmlParser setDelegate:self];
-        
-        [xmlParser parse];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self.tableView reloadData];
-        });
-    });
+//        xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+//        [xmlParser setDelegate:self];
+//        
+//        [xmlParser parse];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            [self.tableView reloadData];
+//        });
+//    });
+
 }
 
 #pragma mark - NSXMLParserDelegate

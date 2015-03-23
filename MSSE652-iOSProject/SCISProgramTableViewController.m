@@ -9,6 +9,7 @@
 #import "SCISProgramTableViewController.h"
 #import "Constants.h"
 #import "ScisProgram.h"
+#import "WebServices.h"
 
 @implementation SCISProgramTableViewController
 
@@ -120,14 +121,44 @@ ScisProgram *currentProgram;
 
 -(void) getScisPrograms {
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program"]];
+    [WebServices getProgramsWithCompletion:^(NSArray *jsonArray) {
+        
+        [programs removeAllObjects];
+        
+        for (int i = 0; i <jsonArray.count; i++) {
+//            NSString *item = jsonArray[i];
+//            NSLog(@"item: %@", item);
+            
+            NSDictionary *programDict = jsonArray[i];
+            ScisProgram *program = [[ScisProgram alloc]init];
+            for (id key in programDict) {
+                id value = [programDict objectForKey:key];
+//                NSLog(@"key: %@, value: %@", key, value);
+                if ([key isEqualToString:IDENT]) {
+                    program.ident = [value intValue];
+                } else if ([key isEqualToString:NAME]) {
+                    program.name = value;
+                }
+            }
+            [programs addObject:program];
+        }
+        
+        [self.tableView reloadData];
+        
+    } andFailure:^(NSError *error) {
+        NSLog(@"There was an error getting programs: %@", error);
+    }];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [request setHTTPMethod:@"GET"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program"]];
+//    
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    
+//    [request setHTTPMethod:@"GET"];
+//    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//    
+//    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+     
 }
 
 //XML Version
@@ -186,8 +217,8 @@ ScisProgram *currentProgram;
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSString *response = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"JSON Response: %@", response); // only for logging
+//    NSString *response = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+//    NSLog(@"JSON Response: %@", response); // only for loggingr
     
     [programs removeAllObjects];
     
@@ -197,14 +228,14 @@ ScisProgram *currentProgram;
                                                        error:&error];
     
     for (int i = 0; i <array.count; i++) {
-        NSString *item = array[i];
-        NSLog(@"item: %@", item);
+//        NSString *item = array[i];
+//        NSLog(@"item: %@", item);
         
         NSDictionary *programDict = array[i];
         ScisProgram *program = [[ScisProgram alloc]init];
         for (id key in programDict) {
             id value = [programDict objectForKey:key];
-            NSLog(@"key: %@, value: %@", key, value);
+//            NSLog(@"key: %@, value: %@", key, value);
             if ([key isEqualToString:IDENT]) {
                 program.ident = [value intValue];
             } else if ([key isEqualToString:NAME]) {
