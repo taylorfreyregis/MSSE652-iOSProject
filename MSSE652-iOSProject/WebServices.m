@@ -10,4 +10,12 @@
 
 @implementation WebServices
 
++(void)getProgramsWithCompletion:(void(^)(NSArray *programs))completionBlock andFailure:(void(^)(NSError *error))failureBlock {
+    
+}
+
++(void)getCoursesWithCompletion:(void(^)(NSArray *courses))completionBlock andFailure:(void(^)(NSError *error))failureBlock {
+    
+}
+
 @end
