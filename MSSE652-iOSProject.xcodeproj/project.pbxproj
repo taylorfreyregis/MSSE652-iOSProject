@@ -20,6 +20,8 @@
 		742AB0D41AACFABB00C01ED9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742AB0D31AACFABB00C01ED9 /* Images.xcassets */; };
 		742AB0D71AACFABB00C01ED9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 742AB0D51AACFABB00C01ED9 /* LaunchScreen.xib */; };
 		742AB0E31AACFABB00C01ED9 /* MSSE652_iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AB0E21AACFABB00C01ED9 /* MSSE652_iOSProjectTests.m */; };
+		FA0B93131AC8F0E70034CB29 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA0B93111AC8F0E70034CB29 /* Model.xcdatamodeld */; };
+		FA0B93161AC8F1600034CB29 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B93151AC8F1600034CB29 /* Program.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		742AB0E11AACFABB00C01ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		742AB0E21AACFABB00C01ED9 /* MSSE652_iOSProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSE652_iOSProjectTests.m; sourceTree = "<group>"; };
 		84AFE31470956252BED70641 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0B93121AC8F0E70034CB29 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FA0B93141AC8F1600034CB29 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		FA0B93151AC8F1600034CB29 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +137,7 @@
 		742AB0C51AACFABB00C01ED9 /* MSSE652-iOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				FA0B93101AC8F0C00034CB29 /* CoreData */,
 				7415558E1AB6043300B0F14E /* Constants.h */,
 				7415558F1AB60D3C00B0F14E /* Models */,
 				741555871AB6011F00B0F14E /* Web Services */,
@@ -179,6 +185,16 @@
 				236F77DB720D3C00BCA0644F /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA0B93101AC8F0C00034CB29 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B93111AC8F0E70034CB29 /* Model.xcdatamodeld */,
+				FA0B93141AC8F1600034CB29 /* Program.h */,
+				FA0B93151AC8F1600034CB29 /* Program.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		FAFCF62D1AAD58ED00610148 /* ViewControllers */ = {
@@ -329,11 +345,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0B93161AC8F1600034CB29 /* Program.m in Sources */,
 				742AB0CC1AACFABB00C01ED9 /* AppDelegate.m in Sources */,
 				7415558D1AB601BC00B0F14E /* WebServices.m in Sources */,
 				741555981AB6199000B0F14E /* ScisCourse.m in Sources */,
 				7415559B1AB61EA800B0F14E /* CourseDetailViewController.m in Sources */,
 				741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */,
+				FA0B93131AC8F0E70034CB29 /* Model.xcdatamodeld in Sources */,
 				741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */,
 				741555951AB618C500B0F14E /* SCISCourseTableViewController.m in Sources */,
 				742AB0C91AACFABB00C01ED9 /* main.m in Sources */,
@@ -541,6 +559,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA0B93111AC8F0E70034CB29 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA0B93121AC8F0E70034CB29 /* Model.xcdatamodel */,
+			);
+			currentVersion = FA0B93121AC8F0E70034CB29 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 742AB0BB1AACFABB00C01ED9 /* Project object */;
 }
