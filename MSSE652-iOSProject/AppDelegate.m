@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <RestKit.h>
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self initializeRestKit];
     return YES;
+}
+
+-(void) initializeRestKit {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program/"]];
+    RKObjectManager *manager = [RKObjectManager managerWithBaseURL:url];
+    NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+//    manager.managedObjectStore = managedObjectStore;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
