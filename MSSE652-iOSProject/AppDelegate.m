@@ -28,7 +28,7 @@
     RKObjectManager *manager = [RKObjectManager managerWithBaseURL:url];
     NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
     RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
-    manager.managedObjectStore = managedObjectStore;
+//    manager.managedObjectStore = managedObjectStore;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
