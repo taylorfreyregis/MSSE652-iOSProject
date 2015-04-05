@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <RestKit.h>
 #import "Constants.h"
 
 @interface AppDelegate ()
@@ -19,17 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [self initializeRestKit];
+//    [self initializeRestKit];
     return YES;
 }
 
--(void) initializeRestKit {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program/"]];
-    RKObjectManager *manager = [RKObjectManager managerWithBaseURL:url];
-    NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
-    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
-//    manager.managedObjectStore = managedObjectStore;
-}
+//-(void) initializeRestKit {
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", WebServiceDomain, WebServicePath, @"regis2.program/"]];
+//    RKObjectManager *manager = [RKObjectManager managerWithBaseURL:url];
+//    NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+//    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+////    manager.managedObjectStore = managedObjectStore;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

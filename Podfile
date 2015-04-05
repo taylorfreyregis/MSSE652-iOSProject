@@ -1,3 +1,3 @@
 source 'http://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-pod 'RestKit', '~> 0.24.0'
+platform :ios, '8.1'
+pod 'AFNetworking', '~> 2.5'
