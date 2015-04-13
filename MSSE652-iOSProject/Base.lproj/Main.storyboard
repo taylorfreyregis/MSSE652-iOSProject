@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyj-zl-2p9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyj-zl-2p9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -250,25 +250,6 @@
             </objects>
             <point key="canvasLocation" x="1312" y="703"/>
         </scene>
-        <!--Cloud-->
-        <scene sceneID="s2O-gU-1Ff">
-            <objects>
-                <viewController title="Cloud" id="b7j-NQ-Hkp" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ivv-zx-AEO"/>
-                        <viewControllerLayoutGuide type="bottom" id="2NV-vw-AhG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XEk-Gc-4os">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Cloud Storage" id="SEh-e9-KBv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eiH-3G-bOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1172" y="1601"/>
-        </scene>
         <!--Chat-->
         <scene sceneID="zlw-9k-myG">
             <objects>
@@ -286,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irl-wZ-R2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168" y="2303"/>
+            <point key="canvasLocation" x="1992" y="1601"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XSJ-rO-PVX">
@@ -299,15 +280,152 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="b7j-NQ-Hkp" kind="relationship" relationship="viewControllers" id="BEZ-rh-hH0"/>
                         <segue destination="GTu-Q5-u58" kind="relationship" relationship="viewControllers" id="uAo-jD-I0E"/>
                         <segue destination="cf6-1n-xhE" kind="relationship" relationship="viewControllers" id="bLe-ec-f3l"/>
                         <segue destination="Nkl-W8-fyn" kind="relationship" relationship="viewControllers" id="X3c-nb-iOR"/>
+                        <segue destination="9MR-fy-XxY" kind="relationship" relationship="viewControllers" id="vfa-eo-ahB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oD0-bs-euD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="350" y="591"/>
+        </scene>
+        <!--iCloud Bookmarks-->
+        <scene sceneID="hFU-er-06Z">
+            <objects>
+                <tableViewController id="6Hf-8t-kcn" customClass="iCloudBookmarkTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="e1Z-u8-8wC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookmarkCellId" textLabel="OLK-kx-cFn" detailTextLabel="JNk-Rx-2z0" style="IBUITableViewCellStyleSubtitle" id="Hui-To-w8E">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hui-To-w8E" id="3kF-4c-vo2">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OLK-kx-cFn">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JNk-Rx-2z0">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6Hf-8t-kcn" id="C9m-sb-dN0"/>
+                            <outlet property="delegate" destination="6Hf-8t-kcn" id="EbI-Ts-R95"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="iCloud Bookmarks" id="j5v-nV-Qxd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="heR-cB-qyg">
+                            <connections>
+                                <segue destination="2b3-B2-m85" kind="show" identifier="addBookmarkSegue" id="A6k-50-DIy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8K3-N1-iff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973" y="1648"/>
+        </scene>
+        <!--Add Bookmark View Controller-->
+        <scene sceneID="fNB-Y6-Tt8">
+            <objects>
+                <viewController id="2b3-B2-m85" customClass="AddBookmarkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dh8-qV-igS"/>
+                        <viewControllerLayoutGuide type="bottom" id="w0z-9x-wPO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nqL-Pc-6tM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3u-5Q-709">
+                                <rect key="frame" x="16" y="75" width="55" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-wQ-clJ">
+                                <rect key="frame" x="16" y="141" width="43.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDi-XR-sqQ">
+                                <rect key="frame" x="79" y="72" width="505" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ui-el-9FL">
+                                <rect key="frame" x="78" y="139" width="505.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="519-ph-Lix">
+                                <rect key="frame" x="550" y="177" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveBookmark:" destination="2b3-B2-m85" eventType="touchUpInside" id="thb-17-W4Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="519-ph-Lix" firstAttribute="trailing" secondItem="nqL-Pc-6tM" secondAttribute="trailingMargin" id="6Jq-4T-1KS"/>
+                            <constraint firstItem="519-ph-Lix" firstAttribute="top" secondItem="8Ui-el-9FL" secondAttribute="bottom" constant="8" id="9zd-nY-OIk"/>
+                            <constraint firstItem="dIS-wQ-clJ" firstAttribute="leading" secondItem="nqL-Pc-6tM" secondAttribute="leadingMargin" id="EsN-JR-tgs"/>
+                            <constraint firstItem="S3u-5Q-709" firstAttribute="top" secondItem="Dh8-qV-igS" secondAttribute="bottom" constant="11" id="ILJ-PY-fqx"/>
+                            <constraint firstItem="TDi-XR-sqQ" firstAttribute="top" secondItem="Dh8-qV-igS" secondAttribute="bottom" constant="8" id="QlH-VR-Okm"/>
+                            <constraint firstItem="dIS-wQ-clJ" firstAttribute="top" secondItem="S3u-5Q-709" secondAttribute="bottom" constant="46" id="aKe-NZ-1Kg"/>
+                            <constraint firstItem="TDi-XR-sqQ" firstAttribute="leading" secondItem="S3u-5Q-709" secondAttribute="trailing" constant="8" id="avp-C5-MDY"/>
+                            <constraint firstItem="8Ui-el-9FL" firstAttribute="leading" secondItem="dIS-wQ-clJ" secondAttribute="trailing" constant="19" id="eFQ-v0-PLu"/>
+                            <constraint firstItem="TDi-XR-sqQ" firstAttribute="trailing" secondItem="nqL-Pc-6tM" secondAttribute="trailingMargin" id="eK1-jU-aQT"/>
+                            <constraint firstItem="8Ui-el-9FL" firstAttribute="top" secondItem="TDi-XR-sqQ" secondAttribute="bottom" constant="37" id="fPP-V2-Ogj"/>
+                            <constraint firstItem="S3u-5Q-709" firstAttribute="leading" secondItem="nqL-Pc-6tM" secondAttribute="leadingMargin" id="gzm-Eo-uJO"/>
+                            <constraint firstItem="8Ui-el-9FL" firstAttribute="trailing" secondItem="nqL-Pc-6tM" secondAttribute="trailingMargin" id="taO-9G-8KQ"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="rUL-q5-TJC"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="NameTextField" destination="TDi-XR-sqQ" id="xnP-2f-FoD"/>
+                        <outlet property="UrlTextField" destination="8Ui-el-9FL" id="fSv-sm-EwM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SG5-OC-5PM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973" y="2404"/>
+        </scene>
+        <!--iCloud-->
+        <scene sceneID="apj-hP-2n2">
+            <objects>
+                <navigationController storyboardIdentifier="iCloud" title="iCloud" id="9MR-fy-XxY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="iCloud" id="Cz9-i9-7ol"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4HI-Ue-OQH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6Hf-8t-kcn" kind="relationship" relationship="rootViewController" id="77R-qb-0Op"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFL-sq-FN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="1648"/>
         </scene>
     </scenes>
 </document>

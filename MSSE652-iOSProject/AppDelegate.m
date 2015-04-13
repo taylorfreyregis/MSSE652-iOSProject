@@ -19,7 +19,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 //    [self initializeRestKit];
+    
+//    [self getiCloudToken];
+    
     return YES;
+}
+
+-(void) getiCloudToken {
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    id currentiCloudToken = fileManager.ubiquityIdentityToken;
 }
 
 //-(void) initializeRestKit {
