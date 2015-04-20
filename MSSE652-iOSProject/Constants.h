@@ -16,3 +16,6 @@
 #define IDENT @"id"
 #define NAME @"name"
 #define PROGRAM_IDENT @"pid"
+
+#define SocketHost @"www.regisscis.net"
+#define SocketPort 8080

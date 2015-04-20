@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyj-zl-2p9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyj-zl-2p9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -112,13 +113,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Program Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebk-Mf-fc2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebk-Mf-fc2">
                                 <rect key="frame" x="16" y="224" width="126" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Program Id:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHR-5c-RDG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Id:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHR-5c-RDG">
                                 <rect key="frame" x="16" y="295" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -136,13 +137,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOZ-1L-lFu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOZ-1L-lFu">
                                 <rect key="frame" x="538" y="224" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-S7-7so">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-S7-7so">
                                 <rect key="frame" x="569" y="295" width="15" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -253,7 +254,7 @@
         <!--Chat-->
         <scene sceneID="zlw-9k-myG">
             <objects>
-                <viewController title="Chat" id="GTu-Q5-u58" sceneMemberID="viewController">
+                <viewController title="Chat" id="GTu-Q5-u58" customClass="ChatSocketViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e30-2t-4dr"/>
                         <viewControllerLayoutGuide type="bottom" id="VFR-T7-V8I"/>
@@ -261,9 +262,71 @@
                     <view key="view" contentMode="scaleToFill" id="MJN-mZ-wP7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ee-i1-nPl">
+                                <rect key="frame" x="16" y="20" width="38" height="30"/>
+                                <state key="normal" title="Open">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="socketConnectionAction:" destination="GTu-Q5-u58" eventType="touchUpInside" id="Eur-pL-mWr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Socket Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-zR-yzW">
+                                <rect key="frame" x="476" y="28" width="108" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a7-er-QZn">
+                                <rect key="frame" x="16" y="300" width="568" height="243"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMu-7H-HlN">
+                                <rect key="frame" x="548" y="262" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessageAction:" destination="GTu-Q5-u58" eventType="touchUpInside" id="k2M-T3-fYc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TZo-RV-h8X">
+                                <rect key="frame" x="16" y="262" width="524" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="socketConnectionAction:" destination="GTu-Q5-u58" eventType="editingDidEnd" id="aTS-xX-CMm"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7a7-er-QZn" firstAttribute="leading" secondItem="MJN-mZ-wP7" secondAttribute="leadingMargin" id="1Er-fI-YAL"/>
+                            <constraint firstItem="5fu-zR-yzW" firstAttribute="top" secondItem="e30-2t-4dr" secondAttribute="bottom" constant="8" id="3CT-ie-svi"/>
+                            <constraint firstItem="7a7-er-QZn" firstAttribute="trailing" secondItem="MJN-mZ-wP7" secondAttribute="trailingMargin" id="FxI-YI-gHp"/>
+                            <constraint firstItem="TZo-RV-h8X" firstAttribute="leading" secondItem="MJN-mZ-wP7" secondAttribute="leadingMargin" id="G8X-eC-RFH"/>
+                            <constraint firstItem="7a7-er-QZn" firstAttribute="top" secondItem="NMu-7H-HlN" secondAttribute="bottom" constant="8" id="MPO-q6-aht"/>
+                            <constraint firstItem="7ee-i1-nPl" firstAttribute="top" secondItem="e30-2t-4dr" secondAttribute="bottom" id="WhE-NB-B6c"/>
+                            <constraint firstItem="VFR-T7-V8I" firstAttribute="top" secondItem="7a7-er-QZn" secondAttribute="bottom" constant="8" id="c9Q-2k-kMT"/>
+                            <constraint firstItem="NMu-7H-HlN" firstAttribute="trailing" secondItem="MJN-mZ-wP7" secondAttribute="trailingMargin" id="cx8-fv-aKH"/>
+                            <constraint firstItem="7ee-i1-nPl" firstAttribute="leading" secondItem="MJN-mZ-wP7" secondAttribute="leadingMargin" id="gBA-bf-Z6w"/>
+                            <constraint firstItem="5fu-zR-yzW" firstAttribute="trailing" secondItem="MJN-mZ-wP7" secondAttribute="trailingMargin" id="hnK-31-Adv"/>
+                            <constraint firstItem="NMu-7H-HlN" firstAttribute="leading" secondItem="TZo-RV-h8X" secondAttribute="trailing" constant="8" id="kDw-I0-lYu"/>
+                            <constraint firstAttribute="centerY" secondItem="7a7-er-QZn" secondAttribute="top" id="lPJ-KC-Cax"/>
+                            <constraint firstItem="7a7-er-QZn" firstAttribute="top" secondItem="TZo-RV-h8X" secondAttribute="bottom" constant="8" id="lme-5q-eaH"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chat Server" id="hte-gc-eyc"/>
+                    <connections>
+                        <outlet property="receiveMessageTextView" destination="7a7-er-QZn" id="hM0-z4-eYE"/>
+                        <outlet property="sendMessageTextField" destination="TZo-RV-h8X" id="vp6-1z-tPv"/>
+                        <outlet property="socketConnectionButton" destination="7ee-i1-nPl" id="yrQ-6A-zIQ"/>
+                        <outlet property="socketStatusLabel" destination="5fu-zR-yzW" id="P30-vQ-Dp3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irl-wZ-R2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,7 +418,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-wQ-clJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="URL: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-wQ-clJ">
                                 <rect key="frame" x="16" y="141" width="43.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -366,7 +429,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ui-el-9FL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ui-el-9FL">
                                 <rect key="frame" x="78" y="139" width="505.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

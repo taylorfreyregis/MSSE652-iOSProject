@@ -24,6 +24,8 @@
 		FA0B93161AC8F1600034CB29 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B93151AC8F1600034CB29 /* Program.m */; };
 		FA46A70F1AD0DB2A00BB2744 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA46A70E1AD0DB2A00BB2744 /* Social.framework */; };
 		FA46A7121AD0EC7300BB2744 /* SocialMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA46A7111AD0EC7300BB2744 /* SocialMediaViewController.m */; };
+		FA5372991AE4602A009BA79D /* SocketSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5372981AE4602A009BA79D /* SocketSvc.m */; };
+		FA53729C1AE46151009BA79D /* ChatSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA53729B1AE46151009BA79D /* ChatSocketViewController.m */; };
 		FA7161F21ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7161F11ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m */; };
 		FA7161F51ADB7EAD003F0BD6 /* AddBookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7161F41ADB7EAD003F0BD6 /* AddBookmarkViewController.m */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,10 @@
 		FA46A70E1AD0DB2A00BB2744 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		FA46A7101AD0EC7300BB2744 /* SocialMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialMediaViewController.h; sourceTree = "<group>"; };
 		FA46A7111AD0EC7300BB2744 /* SocialMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialMediaViewController.m; sourceTree = "<group>"; };
+		FA5372971AE4602A009BA79D /* SocketSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketSvc.h; sourceTree = "<group>"; };
+		FA5372981AE4602A009BA79D /* SocketSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketSvc.m; sourceTree = "<group>"; };
+		FA53729A1AE46151009BA79D /* ChatSocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSocketViewController.h; sourceTree = "<group>"; };
+		FA53729B1AE46151009BA79D /* ChatSocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSocketViewController.m; sourceTree = "<group>"; };
 		FA7161EF1ADB75A0003F0BD6 /* MSSE652-iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MSSE652-iOSProject.entitlements"; sourceTree = "<group>"; };
 		FA7161F01ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCloudBookmarkTableViewController.h; sourceTree = "<group>"; };
 		FA7161F11ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCloudBookmarkTableViewController.m; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 		742AB0C51AACFABB00C01ED9 /* MSSE652-iOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				FA5372961AE45FCB009BA79D /* Socket */,
 				FA7161EF1ADB75A0003F0BD6 /* MSSE652-iOSProject.entitlements */,
 				FA0B93101AC8F0C00034CB29 /* CoreData */,
 				7415558E1AB6043300B0F14E /* Constants.h */,
@@ -224,6 +231,15 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		FA5372961AE45FCB009BA79D /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				FA5372971AE4602A009BA79D /* SocketSvc.h */,
+				FA5372981AE4602A009BA79D /* SocketSvc.m */,
+			);
+			name = Socket;
+			sourceTree = "<group>";
+		};
 		FAFCF62D1AAD58ED00610148 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +255,8 @@
 				FA7161F11ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m */,
 				FA7161F31ADB7EAD003F0BD6 /* AddBookmarkViewController.h */,
 				FA7161F41ADB7EAD003F0BD6 /* AddBookmarkViewController.m */,
+				FA53729A1AE46151009BA79D /* ChatSocketViewController.h */,
+				FA53729B1AE46151009BA79D /* ChatSocketViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -391,8 +409,10 @@
 				7415559B1AB61EA800B0F14E /* CourseDetailViewController.m in Sources */,
 				FA46A7121AD0EC7300BB2744 /* SocialMediaViewController.m in Sources */,
 				741555861AB6011600B0F14E /* SCISProgramTableViewController.m in Sources */,
+				FA5372991AE4602A009BA79D /* SocketSvc.m in Sources */,
 				FA0B93131AC8F0E70034CB29 /* Model.xcdatamodeld in Sources */,
 				741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */,
+				FA53729C1AE46151009BA79D /* ChatSocketViewController.m in Sources */,
 				741555951AB618C500B0F14E /* SCISCourseTableViewController.m in Sources */,
 				742AB0C91AACFABB00C01ED9 /* main.m in Sources */,
 				FA7161F21ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m in Sources */,
