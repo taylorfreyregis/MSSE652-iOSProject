@@ -28,6 +28,7 @@
 		FA53729C1AE46151009BA79D /* ChatSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA53729B1AE46151009BA79D /* ChatSocketViewController.m */; };
 		FA7161F21ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7161F11ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m */; };
 		FA7161F51ADB7EAD003F0BD6 /* AddBookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7161F41ADB7EAD003F0BD6 /* AddBookmarkViewController.m */; };
+		FAE67A391AEDE3D400AAE827 /* WebSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE67A381AEDE3D400AAE827 /* WebSocketViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		FA7161F11ADB7BBD003F0BD6 /* iCloudBookmarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCloudBookmarkTableViewController.m; sourceTree = "<group>"; };
 		FA7161F31ADB7EAD003F0BD6 /* AddBookmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookmarkViewController.h; sourceTree = "<group>"; };
 		FA7161F41ADB7EAD003F0BD6 /* AddBookmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookmarkViewController.m; sourceTree = "<group>"; };
+		FAE67A371AEDE3D400AAE827 /* WebSocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketViewController.h; sourceTree = "<group>"; };
+		FAE67A381AEDE3D400AAE827 /* WebSocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +260,8 @@
 				FA7161F41ADB7EAD003F0BD6 /* AddBookmarkViewController.m */,
 				FA53729A1AE46151009BA79D /* ChatSocketViewController.h */,
 				FA53729B1AE46151009BA79D /* ChatSocketViewController.m */,
+				FAE67A371AEDE3D400AAE827 /* WebSocketViewController.h */,
+				FAE67A381AEDE3D400AAE827 /* WebSocketViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				FA5372991AE4602A009BA79D /* SocketSvc.m in Sources */,
 				FA0B93131AC8F0E70034CB29 /* Model.xcdatamodeld in Sources */,
 				741555921AB60D4A00B0F14E /* ScisProgram.m in Sources */,
+				FAE67A391AEDE3D400AAE827 /* WebSocketViewController.m in Sources */,
 				FA53729C1AE46151009BA79D /* ChatSocketViewController.m in Sources */,
 				741555951AB618C500B0F14E /* SCISCourseTableViewController.m in Sources */,
 				742AB0C91AACFABB00C01ED9 /* main.m in Sources */,

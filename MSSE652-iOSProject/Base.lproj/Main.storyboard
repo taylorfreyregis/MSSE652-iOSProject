@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyj-zl-2p9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pyj-zl-2p9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -281,7 +281,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a7-er-QZn">
                                 <rect key="frame" x="16" y="300" width="568" height="243"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -330,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irl-wZ-R2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992" y="1601"/>
+            <point key="canvasLocation" x="2640" y="1609"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XSJ-rO-PVX">
@@ -347,6 +346,7 @@
                         <segue destination="cf6-1n-xhE" kind="relationship" relationship="viewControllers" id="bLe-ec-f3l"/>
                         <segue destination="Nkl-W8-fyn" kind="relationship" relationship="viewControllers" id="X3c-nb-iOR"/>
                         <segue destination="9MR-fy-XxY" kind="relationship" relationship="viewControllers" id="vfa-eo-ahB"/>
+                        <segue destination="rGZ-7T-nqW" kind="relationship" relationship="viewControllers" id="FQc-tr-gh3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oD0-bs-euD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -399,6 +399,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8K3-N1-iff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973" y="1648"/>
+        </scene>
+        <!--Web Socket-->
+        <scene sceneID="glE-9X-N8U">
+            <objects>
+                <viewController id="rGZ-7T-nqW" customClass="WebSocketViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zup-CQ-ghG"/>
+                        <viewControllerLayoutGuide type="bottom" id="OIH-PO-ZB7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Usv-hq-AkP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-ls-PzP">
+                                <rect key="frame" x="16" y="20" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SendMessageAction:" destination="rGZ-7T-nqW" eventType="touchUpInside" id="UOa-5G-1QH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1j-tR-XbV">
+                                <rect key="frame" x="60" y="21" width="470" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8l-vc-G8H">
+                                <rect key="frame" x="16" y="59" width="568" height="484"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2P-Cb-y5q">
+                                <rect key="frame" x="538" y="21" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ConnectionAction:" destination="rGZ-7T-nqW" eventType="touchUpInside" id="g4z-ne-Hdb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t8l-vc-G8H" firstAttribute="leading" secondItem="Usv-hq-AkP" secondAttribute="leadingMargin" id="3Nd-E4-B5J"/>
+                            <constraint firstItem="t8l-vc-G8H" firstAttribute="top" secondItem="l1j-tR-XbV" secondAttribute="bottom" constant="8" id="6bR-cj-FJP"/>
+                            <constraint firstItem="r0C-ls-PzP" firstAttribute="top" secondItem="zup-CQ-ghG" secondAttribute="bottom" id="7B4-Qx-zgi"/>
+                            <constraint firstItem="t8l-vc-G8H" firstAttribute="trailing" secondItem="Usv-hq-AkP" secondAttribute="trailingMargin" id="E6R-Wf-mk1"/>
+                            <constraint firstItem="t8l-vc-G8H" firstAttribute="leading" secondItem="Usv-hq-AkP" secondAttribute="leadingMargin" id="EzI-Do-xRN"/>
+                            <constraint firstItem="l1j-tR-XbV" firstAttribute="leading" secondItem="r0C-ls-PzP" secondAttribute="trailing" constant="8" id="GYK-sk-0lh"/>
+                            <constraint firstItem="M2P-Cb-y5q" firstAttribute="leading" secondItem="l1j-tR-XbV" secondAttribute="trailing" constant="8" id="GYc-U6-Xgi"/>
+                            <constraint firstItem="t8l-vc-G8H" firstAttribute="trailing" secondItem="Usv-hq-AkP" secondAttribute="trailingMargin" id="MVz-1K-Bgv"/>
+                            <constraint firstItem="l1j-tR-XbV" firstAttribute="leading" secondItem="r0C-ls-PzP" secondAttribute="trailing" constant="8" id="Tek-if-bcO"/>
+                            <constraint firstItem="l1j-tR-XbV" firstAttribute="top" secondItem="zup-CQ-ghG" secondAttribute="bottom" constant="1" id="YJA-Ej-BzG"/>
+                            <constraint firstItem="l1j-tR-XbV" firstAttribute="leading" secondItem="r0C-ls-PzP" secondAttribute="trailing" constant="8" id="ZeU-FR-U5C"/>
+                            <constraint firstItem="OIH-PO-ZB7" firstAttribute="top" secondItem="t8l-vc-G8H" secondAttribute="bottom" constant="8" id="dAL-4z-XY1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M2P-Cb-y5q" secondAttribute="trailing" constant="6" id="dpa-dz-3is"/>
+                            <constraint firstItem="t8l-vc-G8H" firstAttribute="top" secondItem="M2P-Cb-y5q" secondAttribute="bottom" constant="8" id="e6J-tD-yL9"/>
+                            <constraint firstItem="M2P-Cb-y5q" firstAttribute="leading" secondItem="l1j-tR-XbV" secondAttribute="trailing" constant="8" id="eMX-OI-1wG"/>
+                            <constraint firstItem="r0C-ls-PzP" firstAttribute="top" secondItem="zup-CQ-ghG" secondAttribute="bottom" id="fYx-yc-xcP"/>
+                            <constraint firstItem="OIH-PO-ZB7" firstAttribute="top" secondItem="t8l-vc-G8H" secondAttribute="bottom" constant="8" id="g69-TO-t9A"/>
+                            <constraint firstItem="r0C-ls-PzP" firstAttribute="leading" secondItem="Usv-hq-AkP" secondAttribute="leadingMargin" id="gCB-8y-kpo"/>
+                            <constraint firstItem="M2P-Cb-y5q" firstAttribute="top" secondItem="zup-CQ-ghG" secondAttribute="bottom" constant="1" id="kwv-wa-CNa"/>
+                            <constraint firstItem="t8l-vc-G8H" firstAttribute="top" secondItem="l1j-tR-XbV" secondAttribute="bottom" constant="8" id="pPU-Q3-PcK"/>
+                            <constraint firstItem="l1j-tR-XbV" firstAttribute="trailing" secondItem="Usv-hq-AkP" secondAttribute="trailingMargin" id="qY5-Mi-eG1"/>
+                            <constraint firstItem="l1j-tR-XbV" firstAttribute="top" secondItem="zup-CQ-ghG" secondAttribute="bottom" constant="1" id="rCJ-aG-iQh"/>
+                            <constraint firstItem="l1j-tR-XbV" firstAttribute="leading" secondItem="r0C-ls-PzP" secondAttribute="trailing" constant="8" id="v1j-FK-Yqb"/>
+                            <constraint firstItem="r0C-ls-PzP" firstAttribute="leading" secondItem="Usv-hq-AkP" secondAttribute="leadingMargin" id="ve3-SZ-JBt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7B4-Qx-zgi"/>
+                                <exclude reference="gCB-8y-kpo"/>
+                                <exclude reference="6bR-cj-FJP"/>
+                                <exclude reference="EzI-Do-xRN"/>
+                                <exclude reference="MVz-1K-Bgv"/>
+                                <exclude reference="ZeU-FR-U5C"/>
+                                <exclude reference="qY5-Mi-eG1"/>
+                                <exclude reference="rCJ-aG-iQh"/>
+                                <exclude reference="v1j-FK-Yqb"/>
+                                <exclude reference="g69-TO-t9A"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Web Socket" id="dGQ-51-B3R"/>
+                    <connections>
+                        <outlet property="ConnectionButton" destination="M2P-Cb-y5q" id="CLb-Fx-RoZ"/>
+                        <outlet property="WSMessageTextField" destination="l1j-tR-XbV" id="jzV-VC-enz"/>
+                        <outlet property="WSResponseTextView" destination="t8l-vc-G8H" id="XFL-yy-RH6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ze-Q8-9hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1807" y="1631"/>
         </scene>
         <!--Add Bookmark View Controller-->
         <scene sceneID="fNB-Y6-Tt8">
